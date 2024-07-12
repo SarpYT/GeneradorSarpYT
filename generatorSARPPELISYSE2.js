@@ -240,6 +240,384 @@ let enlace14 = document.getElementById('enlace14').value; // Capturar el valor d
 }
 
 #favoritoBtn:hover{background:rgba(121, 121, 255,.5);}
+
+/* Estilos de CSS */
+a {
+text-decoration: none; /* Elimina el subrayado de los enlaces */
+color: inherit; /* Hereda el color del texto circundante */
+cursor: pointer; /* Cambia el cursor al pasar por encima de los enlaces */
+-webkit-tap-highlight-color: transparent; /* Elimina el resaltado en dispositivos tÃ¡ctiles */
+}
+
+
+.post-body-wrapper {
+max-width: 90%;
+margin: 20px auto
+}
+
+
+body{
+background-color: black;
+color: white;
+margin:0;
+padding: 0;
+
+}
+
+a {
+text-decoration: none; /* Para quitar el subrayado */
+user-select: none; /* Para evitar la selecciÃ³n de texto */
+}
+ul, ol {
+list-style: none;
+}
+
+
+.post-header {
+color:white;
+padding: 20px;
+border-radius: 10px;
+overflow: hidden;
+display: grid;
+
+grid-template-columns: 200px 1fr;
+grid-gap: 20px;
+position: relative; /* AÃ±ade esta lÃ­nea para que el contenido interno se muestre por encima del fondo */
+
+}
+
+
+.post-header .image-and-btn img {
+width: 100%;
+border-radius: 10px;
+aspect-ratio: 2/3;
+margin-bottom: 10px
+}
+
+.bs-favs,.delete-btn {
+display: block;
+width: 100%;
+padding: 15px 20px;
+font-size: 15px;
+background: rgba(255,255,255,.15);
+border: 1px solid rgba(255,255,255,.1);
+border-radius: 10px;
+cursor: pointer
+}
+
+.delete-btn {
+background: blue;
+}
+
+.none-btn {
+display: none
+}
+
+.post-header__info {
+display: flex;
+flex-direction: column;
+gap: 5px;
+position: relative;
+top: -100px;
+opacity: 0;
+animation: appearFromTop 1s forwards;
+}
+
+@keyframes appearFromTop {
+0% {
+top: -100px;
+opacity: 0;
+}
+100% {
+top: 0;
+opacity: 1;
+}
+}
+.post-header__info ul {
+display: flex;
+gap: 15px
+}
+
+.post-header__info ul li {
+display: inline-block;
+border: 2px solid rgba(255,255,255,.4);
+padding: 5px 10px;
+border-radius: 5px;
+font-weight: 500
+}
+
+.post-header__info ul li.tmdb-rate {
+background: gold;
+border: 1px solid #736201
+}
+
+.tmdb-rate,.tmdb-rate i {
+color: #000
+}
+
+.post-header__info p.resume {
+font-weight: 700;
+}
+
+.sub-menu {
+border-top: 3px solid var(--main-color)
+}
+
+@media screen and (max-width:870px) {
+.post-header {
+grid-template-columns: 1fr;
+text-align: center
+}
+
+.image-and-btn {
+
+width: 40%;
+margin: 0 auto;
+text-align: center;
+position: relative;
+top: -100px;
+opacity: 0;
+animation: appearFromTop 1s forwards;
+}
+
+@keyframes appearFromTop {
+0% {
+top: -100px;
+opacity: 0;
+}
+100% {
+top: 0;
+opacity: 1;
+}
+}
+
+.post-header .image-and-btn img {
+width: 80%;
+margin: 0 auto
+
+}
+
+.post-header__info {
+align-items: center
+}
+
+.post-header__info p.resume {
+text-align: justify
+}
+}
+
+@media screen and (max-width:490px) {
+.post-header__info ul li {
+font-size: 14px
+}
+
+.image-and-btn {
+width: 60%
+
+}
+
+.post-header__info {
+align-items: center
+}
+
+.post-header__info p.resume {
+text-align: justify
+}
+}
+
+@media only screen and (max-width:870px) {
+.sub-menu {
+border-top: none
+}
+}
+
+
+
+
+.poster-img {
+border: 2px solid white;
+}
+
+
+
+
+
+
+.contenedor-scroll {
+display: flex;
+overflow-x: auto;
+width: 90%;
+white-space: nowrap;
+padding-top: 10px;
+padding-right: 0;
+padding-left: 20px;
+background-color: #;
+border-radius: 10px;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+margin-top: 20px;
+height: 210px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.capitulo {
+display: inline-block;
+margin-right:16px;
+text-align: center;
+
+
+text-decoration: none;
+position: relative;
+color: #000;
+opacity: 0; /* Comienza invisible */
+animation: aparecer 1s forwards; /* Aplica la animaciÃ³n */
+}
+
+@keyframes aparecer {
+to {
+opacity: 1; /* Termina completamente visible */
+}
+}
+
+.imagen {
+position: relative;
+display: inline-block;
+max-width: 200px;
+max-height: 300px;
+
+}
+.imagen img {
+max-width: 100%;
+border-radius: 9px;
+max-height: 100%;
+}
+.duracion {
+position: absolute;
+top: 10px;
+left: 10px;
+background-color: rgba(0, 0, 0, 0.7);
+color: white;
+padding: 5px;
+border-radius: 5px;
+max-width: 80%; /* Asegura que no se desborde si el texto es muy largo */
+direction: rtl; /* Cambia la direcciÃ³n del texto a derecha a izquierda */
+}
+
+.titulo {
+position: absolute;
+top: 100%; /* Cambiar a "bottom: 0;" para colocarlo debajo de la imagen */
+left: 0;
+width: 96%; /* Ajustar el ancho del tÃ­tulo */
+background-color: #222222;
+color: white;
+padding: 5px;
+border-radius: 5px;
+white-space: normal;
+margin-top: 10px;
+
+}
+.temporadas {
+margin-top: 20px;
+text-align: center;
+font-weight: 700;
+background: black;
+color:white;
+width: 200px;
+height: 60px;
+border-radius:8px;
+border: 2px solid yellow;
+}
+
+#seleccionar-temporada {
+background: #333333;
+font-weight: 700;
+color: white;
+border-radius:6px;
+height: 30px;
+border:none;
+margin-top: 6px;
+outline: none;
+
+
+
+}
+#seleccionar-temporada:hover {
+background: red;
+}
+
+.capitulo .imagen {
+position: relative;
+transition: transform 0.5s; /* Agregamos una transiciÃ³n */
+}
+
+.capitulo:hover .imagen {
+transform: scale(1.1); /* Cambia el tamaÃ±o de la imagen al colocar el cursor sobre el enlace */
+}
+
+.play-icon {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-size: 40px; /* Ajusta el tamaÃ±o segÃºn tu preferencia */
+color: rgba(255, 255, 255, 0.5); /* Color del Ã­cono */
+opacity: 0; /* Comienza invisible */
+transition: opacity 0.5s;
+}
+
+.play-icon a {
+display: block;
+width: 100%;
+height: 100%;
+color: inherit; /* Hereda el color del enlace padre */
+text-decoration: none; /* Elimina la decoraciÃ³n del enlace */
+}
+
+.capitulo:hover .play-icon {
+opacity: 1; /* Se hace visible cuando el enlace se coloca sobre Ã©l */
+}
+
+.capitulo .informacion {
+margin-top: 5px; /* Ajusta el margen superior para separar la informaciÃ³n */
+text-align: center;
+}
+
+/* Estilos del iframe */
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+border: 2px solid #ffffff;
+width: 90%;
+height: auto;
+border-radius: 9px;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+/* Estilos de los botones de servidor */
+.server-buttons {
+text-align: center;
+margin-top: 20px;
+}
+.server-buttons button {
+background-color: #333333;
+color: white;
+border: none;
+padding: 10px 20px;
+margin: 0 10px;
+cursor: pointer;
+font-size: 16px;
+border-radius: 5px;
+}
 </style>                  
 
 </head>
