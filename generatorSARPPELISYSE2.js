@@ -203,7 +203,6 @@ let enlace14 = document.getElementById('enlace14').value; // Capturar el valor d
 <!DOCTYPE html>
 <html>
                             
-  <link rel="stylesheet" href="https://ia902708.us.archive.org/16/items/sarp-generador-series-pelis/Sarp%20Generador%20SeriesPelis.css">                          
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
        
